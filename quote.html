@@ -9,7 +9,7 @@
   <body>
     <header class="site-header">
       <a class="logo" href="index.html">
-        <img class="brand-logo" src="assets/deni-logo.jpeg" alt="Deni Funeral logo" />
+        <img class="brand-logo" src="assets/deni-logo-colour-transparent.png" alt="Deni Funeral logo" />
       </a>
       <button class="menu-button" type="button" aria-label="Open menu" data-nav-toggle>
         <span></span><span></span><span></span>
@@ -17,8 +17,8 @@
       <nav class="nav-menu" data-nav>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
+        
         <a href="funeral-plans.html">Funeral Plans</a>
-        <a href="products.html">Plans & Products</a>
         <a href="payment-options.html">Payment Options</a>
         <a href="contact.html">Contact Info</a>
         <a class="quote-link" href="quote.html">Get a Quote</a>
@@ -34,10 +34,11 @@
       </section>
       <section class="content-page quote-form-wrap">
         <h2>Request a quote</h2>
-        <form class="contact-form">
-          <input type="text" name="name" placeholder="Name" aria-label="Name" />
+        <form class="contact-form" data-email-form>
+          <input type="hidden" name="formType" value="Quote request" />
+          <input type="text" name="name" placeholder="Name" aria-label="Name" required />
           <input type="email" name="email" placeholder="Email" aria-label="Email" />
-          <input type="tel" name="phone" placeholder="Cell Number" aria-label="Cell Number" />
+          <input type="tel" name="phone" placeholder="Cell Number" aria-label="Cell Number" required />
           <select name="plan" aria-label="Select plan">
             <option>Deni Grace Plan</option>
             <option>Deni Harmony Plan</option>
@@ -49,14 +50,16 @@
           </select>
           <textarea name="message" rows="5" placeholder="Message" aria-label="Message"></textarea>
           <button class="quote-link" type="submit">Submit</button>
+          <p class="form-status" data-form-status></p>
         </form>
       </section>
     </main>
     <footer class="footer">
       <div>
         <h3>Contact us</h3>
-        <p>Phone: 010 226 9149</p>
-        <p>Email: info@denifuneral.co.za</p>
+        <p>Cell: 064 877 8580</p>
+        <p>Landline: 010 226 9149</p>
+        <p>Email: admin@denifuneral.co.za</p>
         <p>Address: 1F, 173 Oxford Rd, Rosebank, Johannesburg, 2196</p>
       </div>
       <p class="copyright">All Rights Reserved. © 2026 Deni Funerals.</p>

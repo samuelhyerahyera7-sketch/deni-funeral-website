@@ -13,10 +13,11 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="home-page">
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="Deni Funerals home">
-        <img class="brand-logo" src="assets/deni-logo.jpeg" alt="Deni Funeral logo" />
+        <img class="brand-logo brand-logo-light" src="assets/deni-logo-white-transparent.png" alt="Deni Funeral logo" />
+        <img class="brand-logo brand-logo-color" src="assets/deni-logo-colour-transparent.png" alt="Deni Funeral logo" />
       </a>
       <button class="menu-button" type="button" aria-label="Open menu" data-nav-toggle>
         <span></span><span></span><span></span>
@@ -24,8 +25,8 @@
       <nav class="nav-menu" data-nav>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
+        
         <a href="funeral-plans.html">Funeral Plans</a>
-        <a href="products.html">Plans & Products</a>
         <a href="payment-options.html">Payment Options</a>
         <a href="contact.html">Contact Info</a>
         <a class="quote-link" href="quote.html">Get a Quote</a>
@@ -33,11 +34,41 @@
     </header>
 
     <main>
-      <section class="page-hero home-hero">
+      <section class="page-hero home-hero" data-hero-slider>
+        <div class="hero-slides" aria-hidden="true">
+          <img
+            class="hero-slide active"
+            src="assets/consultation-gogo.jpeg"
+            alt=""
+            data-kicker="Dignified funeral services"
+            data-title="Dignified funeral services for every family"
+            data-copy="To accommodate every family's needs, Deni Funerals offers caring funeral cover, respectful planning, and compassionate support when it matters most."
+            data-button="Get Covered"
+          />
+          <img
+            class="hero-slide"
+            src="assets/deni-fleet-showcase.jpeg"
+            alt=""
+            data-kicker="Family transport support"
+            data-title="Reliable transport for a dignified farewell"
+            data-copy="Our hearse and family transport support helps your loved one and family move with care, respect, and professional coordination."
+            data-button="Contact Us"
+          />
+          <img
+            class="hero-slide"
+            src="assets/food-hamper.jpg"
+            alt=""
+            data-kicker="Grocery support benefits"
+            data-title="Practical help for the family after the service"
+            data-copy="Deni grocery support options help families with household essentials during a difficult season."
+            data-button="See Benefits"
+          />
+        </div>
         <div class="hero-inner">
-          <p>Dignified funeral services</p>
-          <h1>Deni Funerals</h1>
-          <span>With you when it matters most</span>
+          <p data-hero-kicker>Dignified funeral services</p>
+          <h1 data-hero-title>Dignified funeral services for every family</h1>
+          <span data-hero-copy>To accommodate every family's needs, Deni Funerals offers caring funeral cover, respectful planning, and compassionate support when it matters most.</span>
+          <a class="hero-button" href="funeral-plans.html" data-hero-button>Get Covered</a>
         </div>
       </section>
 
@@ -66,10 +97,10 @@
       <section class="products home-links">
         <h2>Explore Deni Funerals</h2>
         <div>
-          <a href="funeral-plans.html">Funeral Planning</a>
+          <a href="funeral-plans.html">Funeral Plans</a>
           <a href="products.html">Grocery Support</a>
           <a href="products.html">Tombstone Assistance</a>
-          <a href="contact.html">Nationwide Repatriation</a>
+          <a href="contact.html">Family Assistance</a>
         </div>
       </section>
 
@@ -89,15 +120,16 @@
     <footer class="footer">
       <div>
         <h3>Services</h3>
+        
         <a href="funeral-plans.html">Funeral Plans</a>
-        <a href="products.html">Grocery Plan</a>
-        <a href="products.html">Repatriation Cover</a>
+        <a href="products.html">Family Assistance</a>
       </div>
       <div>
         <h3>Contact us</h3>
-        <p>Phone: 010 226 9149</p>
-        <p>WhatsApp: +27 00 000 0000</p>
-        <p>Email: info@denifuneral.co.za</p>
+        <p>Cell: 064 877 8580</p>
+        <p>Landline: 010 226 9149</p>
+        <p>WhatsApp: 064 877 8580</p>
+        <p>Email: admin@denifuneral.co.za</p>
         <p>Address: 1F, 173 Oxford Rd, Rosebank, Johannesburg, 2196</p>
       </div>
       <p class="copyright">All Rights Reserved. © 2026 Deni Funerals.</p>
