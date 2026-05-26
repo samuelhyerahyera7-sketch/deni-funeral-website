@@ -8,7 +8,7 @@ Static website for Deni Funerals with quote and contact forms.
 - Responsive styling in `styles.css`
 - Site interactions in `script.js`
 - Email form endpoint in `api/send-email.js`
-- Vercel deployment config in `vercel.json`
+- Minimal Vercel config in `vercel.json`
 
 ## Email Form Flow
 
@@ -40,6 +40,8 @@ Do not commit real API keys to GitHub. Use `.env.example` as the template.
 5. Add the environment variables listed above.
 6. Deploy.
 7. Test the quote form with a real email address.
+
+If Vercel shows an old failed deployment, redeploy after pushing the latest `vercel.json`.
 
 ## Local Preview
 
