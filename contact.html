@@ -2,16 +2,16 @@
 <html lang="en">
   <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Deni Funerals | Contact Info</title><link rel="stylesheet" href="styles.css" /></head>
   <body>
-    <header class="site-header"><a class="logo" href="index.html"><img class="brand-logo" src="assets/deni-logo-colour-transparent.png" alt="Deni Funeral logo" /></a><button class="menu-button" type="button" aria-label="Open menu" data-nav-toggle><span></span><span></span><span></span></button><nav class="nav-menu" data-nav><a href="index.html">Home</a><a href="about.html">About Us</a><a href="funeral-plans.html">Funeral Plans</a><a href="payment-options.html">Payment Options</a><a href="contact.html">Contact Info</a><a class="quote-link" href="quote.html">Get a Quote</a></nav></header>
+    <header class="site-header"><a class="logo" href="index.html"><img class="brand-logo" src="assets/deni-logo-colour-transparent.png" alt="Deni Funeral logo" /></a><button class="menu-button" type="button" aria-label="Open menu" data-nav-toggle><span></span><span></span><span></span></button><nav class="nav-menu" data-nav><a href="index.html">Home</a><a href="about.html">About Us</a><div class="nav-dropdown"><a class="nav-parent" href="funeral-plans.html">Funeral Plans</a><div class="nav-submenu" aria-label="Funeral plan sections"><a href="funeral-plans.html#pricing">Pricing</a><a href="funeral-plans.html#grocery-benefit">Grocery Benefit</a><a href="funeral-plans.html#tombstone-benefit">Tombstone Benefit</a></div></div><a href="payment-options.html">Payment Options</a><a href="contact.html">Contact Info</a><a class="quote-link" href="quote.html">Get a Quote</a></nav></header>
     <main>
       <section class="page-hero"><div class="hero-inner"><p>Deni Funerals</p><h1>Contact Info</h1><span>Speak to our team</span></div></section>
-      <section class="contact-layout"><div class="content-page"><h2>Contact us</h2><p>Cell: 064 877 8580</p><p>Landline: 010 226 9149</p><p>WhatsApp: 064 877 8580</p><p>Email: admin@denifuneral.co.za</p><p>Head Office: 1F, 173 Oxford Rd, Rosebank, Johannesburg, 2196</p></div><img src="assets/fleet.jpeg" alt="Deni Funerals vehicles" /></section>
+      <section class="contact-layout"><div class="content-page"><h2>Contact us</h2><p>Cell: 064 877 8580</p><p>Landline: 010 226 9149</p><p>WhatsApp: 064 877 8580</p><p>Email: <a href="mailto:admin@denifuneral.co.za">admin@denifuneral.co.za</a></p><p>Head Office: 1F, 173 Oxford Rd, Rosebank, Johannesburg, 2196</p></div><img src="assets/fleet.jpeg" alt="Deni Funerals vehicles" /></section>
       <section class="content-page quote-form-wrap">
         <h2>Send an enquiry</h2>
         <form class="contact-form" data-email-form>
           <input type="hidden" name="formType" value="Contact enquiry" />
           <input type="text" name="name" placeholder="Name" aria-label="Name" required />
-          <input type="email" name="email" placeholder="Email" aria-label="Email" />
+          <input type="email" name="email" placeholder="Email" aria-label="Email" required />
           <input type="tel" name="phone" placeholder="Cell Number" aria-label="Cell Number" required />
           <textarea name="message" rows="5" placeholder="Message" aria-label="Message"></textarea>
           <button class="quote-link" type="submit">Submit</button>
@@ -19,7 +19,7 @@
         </form>
       </section>
     </main>
-    <footer class="footer"><div><h3>Services</h3></div><p class="copyright">All Rights Reserved. © 2026 Deni Funerals.</p></footer>
+    <footer class="footer"><div><h3>Services</h3></div><div><h3>Legal</h3><a href="terms-of-website-use.html">Terms of Website Use</a><a href="privacy-policy.html">Privacy Policy</a></div><p class="copyright">All Rights Reserved. © 2026 Deni Funerals.</p></footer>
     <script src="script.js"></script>
   </body>
 </html>

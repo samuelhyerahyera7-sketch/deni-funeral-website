@@ -28,7 +28,14 @@
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         
-        <a href="funeral-plans.html">Funeral Plans</a>
+        <div class="nav-dropdown">
+          <a class="nav-parent" href="funeral-plans.html">Funeral Plans</a>
+          <div class="nav-submenu" aria-label="Funeral plan sections">
+            <a href="funeral-plans.html#pricing">Pricing</a>
+            <a href="funeral-plans.html#grocery-benefit">Grocery Benefit</a>
+            <a href="funeral-plans.html#tombstone-benefit">Tombstone Benefit</a>
+          </div>
+        </div>
         <a href="payment-options.html">Payment Options</a>
         <a href="contact.html">Contact Info</a>
         <a class="quote-link" href="quote.html">Get a Quote</a>
@@ -44,7 +51,42 @@
         </div>
       </section>
 
-      <section class="detailed-plans">
+      <section class="detailed-plans" id="pricing">
+        <div class="pricing-overview">
+          <div>
+            <p class="section-kicker">Pricing</p>
+            <h2>Monthly premium comparison</h2>
+            <span>Starting monthly pricing for each Deni funeral plan, with full age-group pricing in the tables below.</span>
+          </div>
+          <div class="price-chart" aria-label="Starting monthly premium comparison">
+            <div class="price-row">
+              <span>Deni Grace</span>
+              <div><i style="width: 30%"></i></div>
+              <strong>R89.00</strong>
+            </div>
+            <div class="price-row">
+              <span>Deni Harmony</span>
+              <div><i style="width: 37%"></i></div>
+              <strong>R109.90</strong>
+            </div>
+            <div class="price-row">
+              <span>Deni Legacy</span>
+              <div><i style="width: 57%"></i></div>
+              <strong>R170.50</strong>
+            </div>
+            <div class="price-row">
+              <span>Deni Royal Heritage</span>
+              <div><i style="width: 76%"></i></div>
+              <strong>R225.00</strong>
+            </div>
+            <div class="price-row">
+              <span>Deni Eternal Prestige</span>
+              <div><i style="width: 100%"></i></div>
+              <strong>R298.00</strong>
+            </div>
+          </div>
+        </div>
+
         <article class="detail-plan grace">
           <header>
             <span>1</span>
@@ -239,25 +281,36 @@
 
       <section class="support-plans">
         <div>
-          <h2>Optional Extras & Available Add-Ons</h2>
+          <h2>Grocery & Tombstone Benefits</h2>
           <p>
-            White doves, photography and videography packages, funeral livestreaming, additional family cars, floral
-            arrangement upgrades, catering coordination, tombstone assistance, grave closure, memorial programmes, VIP
-            decor upgrades, family transport services, and church and community funeral schemes.
+            These support options can help families with household essentials and memorial assistance alongside the
+            funeral plan pricing shown above.
           </p>
         </div>
         <div class="support-grid">
-          <article>
+          <article id="grocery-benefit">
             <h3>Deni Grocery Support Plans</h3>
             <strong>Family Harvest Plan</strong>
             <p>From R95 / month</p>
             <p>Bulk household groceries, extended household essentials, and an additional family support hamper to the value of R5 000.</p>
           </article>
-          <article>
+          <article id="tombstone-benefit">
             <h3>Tombstone Assistance</h3>
             <strong>Tombstone Value Up To R10 000</strong>
             <p>From R50 per month</p>
+            <p>Memorial contribution support for families who want help with tombstone costs after the funeral service.</p>
           </article>
+        </div>
+      </section>
+
+      <section class="support-plans support-plans-extra">
+        <div>
+          <h2>Optional Extras & Available Add-Ons</h2>
+          <p>
+            White doves, photography and videography packages, funeral livestreaming, additional family cars, floral
+            arrangement upgrades, catering coordination, grave closure, memorial programmes, VIP decor upgrades, family
+            transport services, and church and community funeral schemes.
+          </p>
         </div>
       </section>
 
@@ -288,8 +341,13 @@
         <p>Cell: 064 877 8580</p>
         <p>Landline: 010 226 9149</p>
         <p>WhatsApp: 064 877 8580</p>
-        <p>Email: admin@denifuneral.co.za</p>
+        <p>Email: <a href="mailto:admin@denifuneral.co.za">admin@denifuneral.co.za</a></p>
         <p>Address: 1F, 173 Oxford Rd, Rosebank, Johannesburg, 2196</p>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <a href="terms-of-website-use.html">Terms of Website Use</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
       </div>
       <p class="copyright">All Rights Reserved. © 2026 Deni Funerals.</p>
     </footer>

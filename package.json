@@ -1,0 +1,13 @@
+{
+  "name": "deni-funerals-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Deni Funerals website with quote and contact email forms.",
+  "scripts": {
+    "start": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}

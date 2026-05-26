@@ -261,6 +261,59 @@ a {
   transform: scaleX(1);
 }
 
+.nav-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-submenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 20;
+  display: grid;
+  min-width: 240px;
+  margin-top: 0;
+  padding: 18px;
+  border: 1px solid rgba(2, 27, 56, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 22px 42px rgba(2, 27, 56, 0.16);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 16px);
+  transition: opacity 360ms ease, transform 420ms ease;
+}
+
+.nav-dropdown:hover .nav-submenu,
+.nav-dropdown:focus-within .nav-submenu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.nav-submenu a {
+  padding: 11px 14px;
+  border-radius: 6px;
+  color: var(--green-dark);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.nav-submenu a::after {
+  display: block;
+  left: 14px;
+  right: 14px;
+  bottom: 5px;
+  height: 3px;
+}
+
+.nav-submenu a:hover,
+.nav-submenu a.active {
+  color: var(--teal-dark);
+}
+
 .quote-link,
 .plan-body a,
 .quote-section a {
@@ -749,6 +802,56 @@ a {
   line-height: 1.8;
 }
 
+.legal-page {
+  max-width: 1040px;
+}
+
+.legal-page article {
+  margin-top: 28px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 10px 26px rgba(2, 27, 56, 0.05);
+}
+
+.legal-page h3 {
+  margin: 0 0 14px;
+  color: var(--green);
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: clamp(22px, 3vw, 30px);
+}
+
+.legal-page ul {
+  margin: 8px 0 18px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.legal-page a {
+  color: var(--teal-dark);
+  font-weight: 800;
+}
+
+.legal-page dl {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.35fr) minmax(220px, 1fr);
+  gap: 12px 22px;
+  margin: 0;
+}
+
+.legal-page dt {
+  color: var(--green);
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 900;
+}
+
+.legal-page dd {
+  margin: 0;
+  color: var(--muted);
+}
+
 .payment-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -917,6 +1020,76 @@ a {
   background:
     linear-gradient(180deg, rgba(8, 185, 173, 0.06), transparent 360px),
     var(--cream);
+  scroll-margin-top: 94px;
+}
+
+.pricing-overview {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(320px, 1.28fr);
+  gap: 28px;
+  align-items: center;
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 34px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.section-kicker {
+  margin: 0 0 8px;
+  color: var(--teal-dark);
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.pricing-overview h2 {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.1;
+}
+
+.pricing-overview span {
+  color: var(--muted);
+}
+
+.price-chart {
+  display: grid;
+  gap: 14px;
+}
+
+.price-row {
+  display: grid;
+  grid-template-columns: minmax(130px, 180px) minmax(120px, 1fr) minmax(76px, auto);
+  gap: 14px;
+  align-items: center;
+}
+
+.price-row > span,
+.price-row strong {
+  color: var(--green);
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.price-row div {
+  overflow: hidden;
+  height: 14px;
+  border-radius: 999px;
+  background: #e8eef5;
+}
+
+.price-row i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
 }
 
 .plan-tools {
@@ -1141,6 +1314,11 @@ tr:nth-child(even) td {
   background: var(--paper);
 }
 
+#grocery-benefit,
+#tombstone-benefit {
+  scroll-margin-top: 94px;
+}
+
 .support-plans > div:first-child {
   align-self: center;
 }
@@ -1175,6 +1353,11 @@ tr:nth-child(even) td {
   color: var(--ink);
   font-family: Montserrat, Arial, sans-serif;
   font-size: 20px;
+}
+
+.support-plans-extra {
+  grid-template-columns: 1fr;
+  background: var(--cream);
 }
 
 .why-deni {
@@ -1345,6 +1528,99 @@ textarea {
   margin: 8px 0;
 }
 
+.social-links {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.social-links-header {
+  position: absolute;
+  top: 18px;
+  right: clamp(6px, 1.8vw, 24px);
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.home-page .site-header:not(.scrolled) .social-links-header {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.site-header.scrolled .social-links-header,
+body:not(.home-page) .social-links-header {
+  color: rgba(6, 43, 88, 0.58);
+}
+
+.social-links-footer {
+  align-self: start;
+}
+
+.social-links-footer div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  opacity: 0.86;
+  transition: color 180ms ease, opacity 180ms ease, transform 180ms ease;
+}
+
+.social-links a:hover {
+  color: var(--teal);
+  opacity: 1;
+  transform: translateY(-3px) scale(1.16);
+}
+
+.site-header.scrolled .social-links a:hover {
+  color: var(--teal-dark);
+}
+
+.social-links svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  overflow: visible;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.social-links svg text {
+  fill: currentColor;
+  stroke: none;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.social-links svg rect,
+.social-links svg circle,
+.social-links svg path {
+  vector-effect: non-scaling-stroke;
+}
+
+.social-links a[aria-label*="Instagram"] svg {
+  fill: none;
+}
+
+.social-links .brand-youtube rect {
+  fill: none;
+}
+
+.social-links .brand-youtube path {
+  stroke: none;
+}
+
 .copyright {
   grid-column: 1 / -1;
   margin-top: 24px !important;
@@ -1375,6 +1651,16 @@ textarea {
     width: 360px;
     height: 128px;
   }
+
+  .social-links-header {
+    right: 12px;
+    gap: 10px;
+  }
+
+  .social-links svg {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 @media (max-width: 820px) {
@@ -1401,6 +1687,17 @@ textarea {
   .home-page .brand-logo-color {
     width: 310px;
     height: 112px;
+  }
+
+  .social-links-header {
+    top: 18px;
+    right: 52px;
+    gap: 8px;
+  }
+
+  .social-links svg {
+    width: 14px;
+    height: 14px;
   }
 
   .logo-mark {
@@ -1446,6 +1743,53 @@ textarea {
     font-size: 22px;
   }
 
+  .nav-dropdown {
+    display: grid;
+    align-items: stretch;
+  }
+
+  .nav-parent {
+    padding-right: 14px !important;
+  }
+
+  .nav-submenu {
+    position: static;
+    min-width: 0;
+    margin: -4px 0 8px;
+    padding: 8px 0 10px 22px;
+    border: 0;
+    border-left: 3px solid var(--teal);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateY(-14px);
+    transition: max-height 420ms ease, opacity 320ms ease, transform 420ms ease;
+  }
+
+  .nav-dropdown:hover .nav-submenu,
+  .nav-dropdown:focus-within .nav-submenu,
+  .nav-dropdown.submenu-open .nav-submenu {
+    max-height: 190px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-submenu a {
+    padding: 10px 14px;
+    color: var(--green-dark);
+    font-size: 17px;
+  }
+
+  .nav-submenu a:hover,
+  .nav-submenu a.active {
+    background: #eefbfa;
+  }
+
   .site-header.scrolled .nav-menu,
   .site-header.scrolled .nav-menu a,
   .site-header.scrolled .nav-menu a.active {
@@ -1479,6 +1823,7 @@ textarea {
   .footer,
   .table-grid,
   .support-grid,
+  .pricing-overview,
   .plan-tools,
   .about-feature,
   .about-values,
@@ -1506,6 +1851,28 @@ textarea {
   .detail-plan > a {
     margin-left: 20px;
     margin-right: 20px;
+  }
+
+  .pricing-overview {
+    padding: 24px 18px;
+  }
+
+  .legal-page article {
+    padding: 20px;
+  }
+
+  .legal-page dl {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .legal-page dd {
+    margin-bottom: 12px;
+  }
+
+  .price-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .core-services,

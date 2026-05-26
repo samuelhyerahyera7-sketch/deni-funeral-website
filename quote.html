@@ -18,7 +18,14 @@
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         
-        <a href="funeral-plans.html">Funeral Plans</a>
+        <div class="nav-dropdown">
+          <a class="nav-parent" href="funeral-plans.html">Funeral Plans</a>
+          <div class="nav-submenu" aria-label="Funeral plan sections">
+            <a href="funeral-plans.html#pricing">Pricing</a>
+            <a href="funeral-plans.html#grocery-benefit">Grocery Benefit</a>
+            <a href="funeral-plans.html#tombstone-benefit">Tombstone Benefit</a>
+          </div>
+        </div>
         <a href="payment-options.html">Payment Options</a>
         <a href="contact.html">Contact Info</a>
         <a class="quote-link" href="quote.html">Get a Quote</a>
@@ -37,7 +44,7 @@
         <form class="contact-form" data-email-form>
           <input type="hidden" name="formType" value="Quote request" />
           <input type="text" name="name" placeholder="Name" aria-label="Name" required />
-          <input type="email" name="email" placeholder="Email" aria-label="Email" />
+          <input type="email" name="email" placeholder="Email" aria-label="Email" required />
           <input type="tel" name="phone" placeholder="Cell Number" aria-label="Cell Number" required />
           <select name="plan" aria-label="Select plan">
             <option>Deni Grace Plan</option>
@@ -59,8 +66,13 @@
         <h3>Contact us</h3>
         <p>Cell: 064 877 8580</p>
         <p>Landline: 010 226 9149</p>
-        <p>Email: admin@denifuneral.co.za</p>
+        <p>Email: <a href="mailto:admin@denifuneral.co.za">admin@denifuneral.co.za</a></p>
         <p>Address: 1F, 173 Oxford Rd, Rosebank, Johannesburg, 2196</p>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <a href="terms-of-website-use.html">Terms of Website Use</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
       </div>
       <p class="copyright">All Rights Reserved. © 2026 Deni Funerals.</p>
     </footer>
