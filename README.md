@@ -25,7 +25,7 @@ Add these in Vercel under Project Settings > Environment Variables:
 ```text
 RESEND_API_KEY=your_resend_api_key
 CONTACT_TO_EMAIL=admin@denifuneral.co.za
-FROM_EMAIL=Deni Funerals <quotes@denifuneral.co.za>
+FROM_EMAIL=Deni Funerals <admin@denifuneral.co.za>
 REPLY_TO_EMAIL=admin@denifuneral.co.za
 ```
 
@@ -55,4 +55,4 @@ Then open the local URL shown by Vercel.
 
 ## Notes
 
-For best email deliverability, verify `denifuneral.co.za` in Resend before using `quotes@denifuneral.co.za` as the sender address.
+For best email deliverability, verify `denifuneral.co.za` in Resend before using `admin@denifuneral.co.za` as the sender address.

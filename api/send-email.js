@@ -6,6 +6,23 @@ const escapeHtml = (value = "") =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 
+const sendEmail = async (apiKey, mail) => {
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(mail),
+  });
+
+  if (response.ok) return;
+
+  const details = await response.json().catch(() => ({}));
+  const reason = details.message || details.error || "Resend rejected the email request.";
+  throw new Error(reason);
+};
+
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
@@ -14,7 +31,7 @@ module.exports = async function handler(req, res) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const toEmail = process.env.CONTACT_TO_EMAIL || "admin@denifuneral.co.za";
-  const fromEmail = process.env.FROM_EMAIL || "Deni Funerals <onboarding@resend.dev>";
+  const fromEmail = process.env.FROM_EMAIL || "Deni Funerals <admin@denifuneral.co.za>";
   const replyEmail = process.env.REPLY_TO_EMAIL || toEmail;
 
   if (!apiKey) {
@@ -61,17 +78,16 @@ module.exports = async function handler(req, res) {
     cleanMessage || "No message provided",
   ].join("\n");
 
-  const mailRequests = [
-    {
-      from: fromEmail,
-      to: [toEmail],
-      reply_to: cleanEmail || undefined,
-      subject,
-      html: salesHtml,
-      text: salesText,
-    },
-  ];
+  const salesEmail = {
+    from: fromEmail,
+    to: [toEmail],
+    reply_to: cleanEmail || undefined,
+    subject,
+    html: salesHtml,
+    text: salesText,
+  };
 
+  let customerEmail;
   if (cleanEmail) {
     const customerSubject = "Deni Funerals received your quote request";
     const customerHtml = `
@@ -96,34 +112,36 @@ module.exports = async function handler(req, res) {
       "Deni Funerals",
     ].join("\n");
 
-    mailRequests.push({
+    customerEmail = {
       from: fromEmail,
       to: [cleanEmail],
       reply_to: replyEmail,
       subject: customerSubject,
       html: customerHtml,
       text: customerText,
-    });
+    };
   }
 
   try {
-    for (const mail of mailRequests) {
-      const response = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(mail),
-      });
-
-      if (!response.ok) {
-        return res.status(502).json({ message: "Email could not be sent." });
-      }
-    }
+    await sendEmail(apiKey, salesEmail);
   } catch (error) {
-    return res.status(502).json({ message: "Email service could not be reached." });
+    return res.status(502).json({
+      message: `Deni did not receive the request. Email setup error: ${error.message}`,
+    });
   }
 
-  return res.status(200).json({ message: "Message sent successfully." });
+  if (customerEmail) {
+    try {
+      await sendEmail(apiKey, customerEmail);
+    } catch (error) {
+      return res.status(200).json({
+        message:
+          "Deni received your request. The confirmation email could not be sent, but a sales agent will contact you shortly.",
+      });
+    }
+  }
+
+  return res.status(200).json({
+    message: "Thank you. Deni received your request and sent you a confirmation email. A sales agent will contact you shortly.",
+  });
 };

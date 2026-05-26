@@ -90,7 +90,9 @@ document.querySelectorAll(".contact-form").forEach((form) => {
 
       form.reset();
       if (status) {
-        status.textContent = "Thank you. We received your request and sent you a confirmation email. A sales agent will contact you shortly.";
+        status.textContent =
+          result.message ||
+          "Thank you. We received your request and sent you a confirmation email. A sales agent will contact you shortly.";
         status.classList.add("success");
       }
     } catch (error) {
