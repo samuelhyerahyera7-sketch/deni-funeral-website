@@ -1473,6 +1473,19 @@ textarea {
   text-transform: uppercase;
 }
 
+.contact-hours {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.contact-hours h3 {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 18px;
+}
+
 .floating-actions {
   position: fixed;
   z-index: 30;
