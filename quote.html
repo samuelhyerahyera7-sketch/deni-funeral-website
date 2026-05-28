@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deni Funerals | Get a Quote</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -43,7 +44,7 @@
         <h2>Request a quote</h2>
         <form class="contact-form" data-email-form>
           <input type="hidden" name="formType" value="Quote request" />
-          <input type="text" name="name" placeholder="Name" aria-label="Name" required />
+          <input type="text" name="name" placeholder="Name and Surname" aria-label="Name and Surname" required />
           <input type="email" name="email" placeholder="Email" aria-label="Email" required />
           <input type="tel" name="phone" placeholder="Cell Number" aria-label="Cell Number" required />
           <select name="plan" aria-label="Select plan">
@@ -52,10 +53,10 @@
             <option>Deni Legacy Plan</option>
             <option>Deni Royal Heritage Plan</option>
             <option>Deni Eternal Prestige Plan</option>
-            <option>Grocery Support Plan</option>
+            <option>Grocery Support Benefit</option>
             <option>Tombstone Assistance</option>
           </select>
-          <textarea name="message" rows="5" placeholder="Message" aria-label="Message"></textarea>
+          <textarea name="message" rows="5" placeholder="Add more details about your request here..." aria-label="Add more details about your request here"></textarea>
           <button class="quote-link" type="submit">Submit</button>
           <p class="form-status" data-form-status></p>
         </form>

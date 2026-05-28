@@ -20,6 +20,12 @@ const sendEmail = async (apiKey, mail) => {
 
   const details = await response.json().catch(() => ({}));
   const reason = details.message || details.error || "Resend rejected the email request.";
+  console.error("Resend email error:", {
+    status: response.status,
+    reason,
+    to: mail.to,
+    from: mail.from,
+  });
   throw new Error(reason);
 };
 
@@ -36,7 +42,7 @@ module.exports = async function handler(req, res) {
 
   if (!apiKey) {
     return res.status(500).json({
-      message: "Quote email is not fully set up yet. Please call or WhatsApp us.",
+      message: "Missing RESEND_API_KEY in Vercel Production. Add it, then redeploy.",
     });
   }
 
@@ -125,6 +131,7 @@ module.exports = async function handler(req, res) {
   try {
     await sendEmail(apiKey, salesEmail);
   } catch (error) {
+    console.error("Deni lead email failed:", error.message);
     return res.status(502).json({
       message: `Deni did not receive the request. Email setup error: ${error.message}`,
     });
@@ -134,6 +141,7 @@ module.exports = async function handler(req, res) {
     try {
       await sendEmail(apiKey, customerEmail);
     } catch (error) {
+      console.error("Customer confirmation email failed:", error.message);
       return res.status(200).json({
         message:
           "Deni received your request. The confirmation email could not be sent, but a sales agent will contact you shortly.",

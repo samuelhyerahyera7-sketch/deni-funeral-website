@@ -63,6 +63,16 @@ document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
 });
 
 document.querySelectorAll(".contact-form").forEach((form) => {
+  const planSelect = form.querySelector("select[name='plan']");
+  const selectedPlan = new URLSearchParams(window.location.search).get("plan");
+
+  if (planSelect && selectedPlan) {
+    const matchingOption = [...planSelect.options].find((option) => option.value === selectedPlan);
+    if (matchingOption) {
+      planSelect.value = selectedPlan;
+    }
+  }
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const button = form.querySelector("button[type='submit']");
