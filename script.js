@@ -99,6 +99,12 @@ document.querySelectorAll(".contact-form").forEach((form) => {
       }
 
       form.reset();
+      const successRedirect = form.dataset.successRedirect;
+      if (successRedirect) {
+        window.location.assign(successRedirect);
+        return;
+      }
+
       if (status) {
         status.textContent =
           result.message ||
@@ -135,7 +141,7 @@ const socialIcons = `
   <a href="#" aria-label="Deni Funeral on YouTube">
     <svg class="brand-youtube" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="3"></rect><path d="M10 9l6 3-6 3z"></path></svg>
   </a>
-  <a href="#" aria-label="Deni Funeral on LinkedIn">
+  <a href="https://www.linkedin.com/company/deni-funeral/about/" aria-label="Deni Funeral on LinkedIn">
     <svg viewBox="0 0 24 24" aria-hidden="true"><text x="4" y="18">in</text></svg>
   </a>
   <a href="#" aria-label="Deni Funeral on Instagram">

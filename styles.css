@@ -1432,6 +1432,47 @@ textarea {
   opacity: 0.7;
 }
 
+.thank-you-panel {
+  max-width: 820px;
+  text-align: center;
+}
+
+.thank-you-panel h2 {
+  margin-bottom: 18px;
+}
+
+.thank-you-panel p:not(.section-kicker) {
+  max-width: 640px;
+  margin-right: auto;
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.thank-you-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.thank-you-actions a:not(.quote-link) {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0 22px;
+  color: var(--green-dark);
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .floating-actions {
   position: fixed;
   z-index: 30;
